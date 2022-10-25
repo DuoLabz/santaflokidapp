@@ -11,8 +11,7 @@ import Articles from './components/Articles';
 import NFT from './components/NFT';
 import Documents from './components/Documents';
 import Staking from './components/Staking';
-import minting from './components/minting';
-
+import Minting from './components/Minting';
 export const Context = createContext(null)
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
         />
         <Route exact path='/articles' element={<Articles></Articles>}/>
         <Route exact path='/nft' element={<NFT></NFT>}/>
-        <Route exact path='/minting' element={<minting/>}/>
+        <Route exact path='/minting' element={<Minting/>}/>
         <Route exact path='staking' element={<Staking></Staking>}/>
         <Route exact path='/documents' element={<Documents></Documents>}/>
         </Routes>

@@ -6,12 +6,10 @@ import { IconContext } from 'react-icons/lib';
 import Chart from 'apexcharts'
 import Logo from './Logo';
 import Stats1 from './Stats1';
-import bgimg from '../assets/images/imgbg.jpg';
 
 const Staking = () =>{
     return(
         <div className="homediv">
-                <img className='bgimg' src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 

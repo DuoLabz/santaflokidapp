@@ -6,14 +6,12 @@ import { IconContext } from 'react-icons/lib';
 import Chart from 'apexcharts'
 import Logo from './Logo';
 import Stats1 from './Stats1';
-import bgimg from '../assets/images/imgbg.jpg';
 import Doc1 from '../assets/images/Doc1.jpg';
 import Doc2 from '../assets/images/Doc2.png';
 
 const Documents = () =>{
     return(
         <div className="homediv">
-                    <img className='bgimg' src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 

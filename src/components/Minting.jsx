@@ -5,8 +5,9 @@ import {FaReact} from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib';
 import Chart from 'apexcharts'
 import Logo from './Logo';
+import bgimg from '../assets/images/imgbg.jpg';
 
-const NFT = () =>{
+const Minting = () =>{
     return(
         <div className="homediv">
             <NavbarComponent/>
@@ -15,7 +16,7 @@ const NFT = () =>{
                 <h1 className='pagebanner'>
                     
                 <Logo size={50} marginRight={10}/>
-                     <div className='vline'/>NFT
+                     <div className='vline'/>Minting
                 </h1>
 
                 <Alert variant='danger' style={{fontSize:'15px',height:"fit-content"}}>
@@ -23,7 +24,7 @@ const NFT = () =>{
                         <div>
                             <CgDanger style={{display:'inline-block ',marginRight:'10px',fontSize:'25px', paddingBottom:'2px',color:'white'}}/>
                             <div style={{display:'inline-block',color:'white'}}>Coming soon</div>
-                            <div style={{marginLeft:'35px'}}>NFT integrations will be coming soon. Track your NFTs and explore all of the beautiful designs inside the website! </div>
+                            <div style={{marginLeft:'35px'}}>Minting will be coming soon.While explore all of the beautiful designs inside the website! </div>
                     </div>
                 </Alert>
 
@@ -33,4 +34,4 @@ const NFT = () =>{
     );
 }
 
-export default NFT;
+export default Minting;

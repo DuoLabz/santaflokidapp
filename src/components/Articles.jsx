@@ -2,12 +2,10 @@ import { Alert, Container} from 'react-bootstrap';
 import NavbarComponent from './NavbarComponent';
 import {CgDanger} from 'react-icons/cg';
 import Logo from './Logo';
-import bgimg from '../assets/images/imgbg.jpg';
 
 const Articles = () =>{
     return(
         <div className="homediv">
-                <img className='bgimg' src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 
