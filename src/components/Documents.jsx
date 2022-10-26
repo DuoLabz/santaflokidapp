@@ -20,15 +20,16 @@ const Documents = () =>{
                      <div className='vline'/>Documents
                 </h1>
             <div className = "documents">
+               
 
-                <div>
-                    <img className='docs doc1' src={Doc1} style={{width:"300px",height:"180px", marginLeft:"28px"}} />
-                        <b style={{marginLeft:'-210px'}}>Comming soon...</b>
+                <b>Coming soon...</b>
+                <div className='docs doc1'>
+                    <img className='docs' src={Doc1} style={{width:"300px",height:"180px"}} />
                 </div>
 
-                <div>      
+                <div  className='docs doc2'>      
                     <a href='https://fje.wfu.mybluehost.me/SantaFloki/wp-content/uploads/2022/08/Santa-Floki-BSC-Audit-15454885.pdf' target="_blank">
-                      <img className='docs doc2' src={Doc2} style={{width:"340px" , height:"210px"}}/>
+                      <img className='docs' src={Doc2} style={{width:"300px",height:"180px"}}/>
                     </a>
                 </div>
 
