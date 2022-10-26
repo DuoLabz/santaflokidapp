@@ -139,6 +139,7 @@ thead{
 }
 
 .connectionalert{
+  z-index: 1000;
   position: absolute;
   left:50%;
   transform: translate(-50%, 0);
@@ -453,6 +454,11 @@ input::-webkit-inner-spin-button {
   margin-left:auto;
 }
 
+.docs img{
+  border: 1px white;
+  box-shadow: 8px 8px 10px rgba(255, 255, 255, 0.61);
+}
+
 .doc1:hover{
   transform:scale(1.1);
   filter:brightness(150%);
@@ -464,6 +470,13 @@ input::-webkit-inner-spin-button {
   transform:scale(1.1);
   filter:brightness(120%);
   cursor: pointer;
+}
+
+.coming{
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1px;
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 .socialDiv{
