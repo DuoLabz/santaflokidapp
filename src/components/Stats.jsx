@@ -55,8 +55,7 @@ const Stats = () => {
                             </IconContext.Provider>
                              22,146 ETH + BTC
                         </Card.Text>
-                        <Chart className='statschart' width='100' type='area' options={option}
-                            series={[{name:'series-1',data:[35,40,50,25,40,30]}]}/>
+                        <Chart className='statschart' width='100' type='area' options={option}/>
                     </Card>
                 </Col>
                 <Col xl>
