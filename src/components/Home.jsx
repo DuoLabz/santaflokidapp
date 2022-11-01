@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import Logo from './Logo';
 import mainlogo from "../assets/images/mainlogo.png";
 import bannerIce from "../assets/images/snow/ice 2.png";
-import axios from 'axios';
 import bgimg from "../assets/images/bgimg.png";
 import Btn from "./Btn";
 
@@ -24,13 +23,8 @@ const Home = () => {
         setProvider(provider);
         setAddress(address);
     }
-    
-    const axio = async () =>{
-       setPrice( await (await axios.get("https://api.pancakeswap.info/api/v2/tokens/0x14940169E2Db1595CDD3CACd30DECC5bbB4d9f19")).data[price]);
-    }
-    axio();
 
-    console.log(price);
+
     return(
         <div className="homediv">
             <img className="bgimg" src={bgimg}/>

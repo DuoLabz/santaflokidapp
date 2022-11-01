@@ -9,8 +9,18 @@ import statsIce2 from "../assets/images/snow/ice 2.png";
 import statsIce3 from "../assets/images/snow/ice 3.png";
 import spooky from "../assets/images/spookyhaloweenfloki.png";
 import logo from '../assets/images/logo.png'
+import axios from 'axios';
+import { useEffect } from "react";
 
 const Stats = () => {
+
+    useEffect(()=>{
+        axio();
+    })
+
+    const [santaPrice,setSantaPrice]=useState("...");
+    const [spookyPrice,setSpookyPrice]=useState("...");
+    const [marvinPrice,setMarvinPrice]=useState("...");
 
     const [option, setOption] = useState({
         dataLabels:{enabled:false},
@@ -22,6 +32,19 @@ const Stats = () => {
         fill:{colors:['#fe0000']},
         stroke:{colors:['#fe0000']}
      })
+
+         
+    const axio = async () =>{
+
+        var api = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=spookyhalloweenfloki&vs_currencies=usd")).data.spookyhalloweenfloki["usd"];
+        setSpookyPrice(api);
+
+        var api1 = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=santa-floki-v2&vs_currencies=usd")).data["santa-floki-v2"].usd;
+        setSantaPrice( api1);
+
+        var api2 = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=flokimarvin&vs_currencies=usd")).data.flokimarvin.usd;
+        setMarvinPrice(api2);
+    }
 
     return(
         <Container style={{marginTop:'5px'}}>
@@ -41,7 +64,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <IoPricetag style={{marginRight:"10px"}}/>
                             </IconContext.Provider>
-                             $0.000063
+                             {spookyPrice}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Market Cap
@@ -50,7 +73,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             $57,19K
+                             $11.19K
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Dividend Holders
@@ -59,7 +82,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <FaHandHoldingUsd style={{marginRight:"10px"}}/>                           
                              </IconContext.Provider>
-                             29,000
+                             NA
                         </Card.Text>
                     </Card>
                 </Col>
@@ -76,7 +99,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <IoPricetag style={{marginRight:"10px"}}/>
                             </IconContext.Provider>
-                             $0.000063
+                             {santaPrice}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Market Cap
@@ -85,7 +108,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                           
                              </IconContext.Provider>
-                             $57,19K
+                             $57.19K
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Dividend Holders
@@ -94,7 +117,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <FaHandHoldingUsd style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             29,000
+                             2900
                         </Card.Text>
                     </Card>
                 </Col>
@@ -111,7 +134,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <IoPricetag style={{marginRight:"10px"}}/>
                             </IconContext.Provider>
-                             $0.000063
+                             {marvinPrice}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Market Cap
@@ -120,7 +143,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             $57,19K
+                             NA
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
                             Dividend Holders
@@ -129,7 +152,7 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <FaHandHoldingUsd style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             29,000
+                             920
                         </Card.Text>
                     </Card>
                 </Col>
