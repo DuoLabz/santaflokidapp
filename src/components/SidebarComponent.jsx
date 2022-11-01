@@ -219,9 +219,10 @@ const SidebarComponent = () => {
                         <BiCoinStack/>
                     </IconContext.Provider>
                 }>
-                        <a className="menuitem" href="https://spookyhalloweenfloki.com/staking/" target="_blank">
                     Staking
-                </a>
+                    <NavLink onClick={()=>{
+                        setReload(!reload)
+                    }} to='/staking'></NavLink>
                 </MenuItem>
 
                 <MenuItem id='nftbtn' className="menuitem" icon={

@@ -8,10 +8,12 @@ import Logo from './Logo';
 import Stats1 from './Stats1';
 import Doc1 from '../assets/images/Doc1.jpg';
 import Doc2 from '../assets/images/Doc2.png';
+import bgimg from "../assets/images/bgimg.png";
 
 const Documents = () =>{
     return(
         <div className="homediv">
+                        <img className="bgimg" src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 
@@ -22,7 +24,7 @@ const Documents = () =>{
             <div className = "documents">
                
 
-                <b>Coming soon...</b>
+                <p className='coming'>Coming soon...</p>
                 <div className='docs doc1'>
                     <img className='docs' src={Doc1} style={{width:"300px",height:"180px"}} />
                 </div>

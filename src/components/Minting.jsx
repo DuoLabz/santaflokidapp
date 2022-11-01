@@ -5,11 +5,12 @@ import {FaReact} from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib';
 import Chart from 'apexcharts'
 import Logo from './Logo';
-import bgimg from '../assets/images/imgbg.jpg';
+import bgimg from "../assets/images/bgimg.png";
 
 const Minting = () =>{
     return(
         <div className="homediv">
+                        <img className="bgimg" src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 
