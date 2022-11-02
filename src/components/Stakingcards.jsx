@@ -68,7 +68,7 @@ const StakingCards = () => {
                           Floki Marvin
                         </Card.Title>
                         <Card.Text style={{textAlign:"center" , marginTop:"10px"}}>
-                        <img style={{width:"200px"}} src={"https://i0.wp.com/www.flokimarvin.io/wp-content/uploads/2022/06/Floki-Marvin-Logo-Transparent-min.png?w=1500&ssl=1"}/>
+                        <img className="spiner" style={{width:"200px"}} src={"https://i0.wp.com/www.flokimarvin.io/wp-content/uploads/2022/06/Floki-Marvin-Logo-Transparent-min.png?w=1500&ssl=1"}/>
                         </Card.Text>
                         <Card.Text style={{fontSize:"20px" , textAlign:"center" , marginTop:"10px"}}>
                             <Button className="btn btn-warning" href="https://staking.flokimarvin.io/" target="_blank" style={{backgroundColor:"yello"}}>Stake Tokens!</Button>
