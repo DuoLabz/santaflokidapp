@@ -1,15 +1,13 @@
 import {CgPerformance} from 'react-icons/cg'
 import {ProSidebar,Menu,MenuItem, SidebarContent} from 'react-pro-sidebar'
 import {AiFillCalculator} from 'react-icons/ai'
-import {BsBrush,BsCoin} from 'react-icons/bs'
+import {BsBrush,BsCoin,BsArrowRightCircleFill,BsArrowLeftCircleFill} from 'react-icons/bs'
 import 'react-pro-sidebar/dist/css/styles.css';
 import { IconContext } from 'react-icons/lib';
 import { useState } from 'react';
 import {ImStatsDots} from 'react-icons/im';
 import {BiNews,BiCoinStack} from 'react-icons/bi';
 import {NavLink} from 'react-router-dom'
-import {BsCircle} from 'react-icons/bs'
-import {BsRecordCircle} from 'react-icons/bs'
 import { Context } from '../App';
 import { useContext } from 'react';
 import {IoGameControllerOutline,IoShapesOutline} from 'react-icons/io5'
@@ -18,6 +16,8 @@ import Logo from './Logo'
 import {RiAppsFill, RiCoinsLine} from 'react-icons/ri'
 import {FaFacebook,FaDiscord,FaTelegram} from "react-icons/fa";
 import {AiFillInstagram,AiFillTwitterCircle} from "react-icons/ai";
+import Tooltip from '@mui/material/Tooltip';
+
 
 const SidebarComponent = () => {
     const [toggle,setToggle] = useContext(Context)
@@ -125,13 +125,13 @@ const SidebarComponent = () => {
             <div className='sidenavheader' id="sidenavheader">
                 <Logo size={55} marginLeft={12} marginTop={12}/>
                 {!collapse?
-                <IconContext.Provider value={{size:"20px",className:'sidenavheadercollapsebtn'}}>
-                <BsRecordCircle onClick={onCollapse} id="collapsetoggle">
-                </BsRecordCircle>
+                <IconContext.Provider value={{size:"20px" ,color : "white" , cursor : "pointer" ,className:'sidenavheadercollapsebtn'}}>
+                <BsArrowLeftCircleFill onClick={onCollapse} id="collapsetoggle">
+                </BsArrowLeftCircleFill>
                 </IconContext.Provider>:
-                <IconContext.Provider value={{size:"20px",className:'sidenavheadercollapsebtncollapsed'}}>
-                <BsCircle onClick={onCollapse} id="collapsetoggle">
-                </BsCircle>
+                <IconContext.Provider value={{size:"20px",color : "white" , className:'sidenavheadercollapsebtncollapsed'}}>
+                <BsArrowRightCircleFill onClick={onCollapse} id="collapsetoggle">
+                </BsArrowRightCircleFill>
                 </IconContext.Provider>
                 }                   
             </div>
@@ -168,6 +168,8 @@ const SidebarComponent = () => {
                 <div className='sidenavheadertitle text'>
                 <p>GENERAL</p>
                 </div>
+
+                <Tooltip title="HomePage" placement='right' arrow>
                 <MenuItem id='homebtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <CgPerformance/>
@@ -178,7 +180,9 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }} to='/'></NavLink>
                 </MenuItem>
+                    </Tooltip>
                 
+                    <Tooltip title="Statistics" placement='right' arrow>
                 <MenuItem id='statsbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <ImStatsDots/>
@@ -189,7 +193,10 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }} to='/statistics'></NavLink>
                 </MenuItem>
+                </Tooltip>
 
+
+                <Tooltip title="Articles" placement='right' arrow>
                 <MenuItem id='newsbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <BiNews/>
@@ -200,9 +207,13 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }}></NavLink>
                 </MenuItem>
+                </Tooltip>
+
                 <div className='sidenavheadertitle text'>
                 <p>ECOSYSTEM</p>
                 </div>
+
+                <Tooltip title="Documents" placement='right' arrow>
                 <MenuItem id='rewardbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <BsCoin/>
@@ -213,7 +224,10 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }}></NavLink>
                 </MenuItem>
+                </Tooltip>
+
                 
+                <Tooltip title="Staking" placement='right' arrow>
                 <MenuItem id='stakingbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <BiCoinStack/>
@@ -224,7 +238,9 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }} to='/staking'></NavLink>
                 </MenuItem>
+                </Tooltip>
 
+                <Tooltip title="NFTs Collection" placement='right' arrow>
                 <MenuItem id='nftbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <BsBrush/>
@@ -235,7 +251,9 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }} to='/nft'></NavLink>
                 </MenuItem>
+                </Tooltip>
 
+                <Tooltip title="Minting" placement='right' arrow>
                 <MenuItem id='minting' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <IoShapesOutline/>
@@ -246,7 +264,9 @@ const SidebarComponent = () => {
                         setReload(!reload)
                     }} to='/minting'></NavLink>
                 </MenuItem>
+                </Tooltip>
 
+                <Tooltip title="SantaFlokiRush Game" placement='right' arrow>
                 <MenuItem id='nftbtn' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <IoGameControllerOutline/>
@@ -256,6 +276,7 @@ const SidebarComponent = () => {
                     Game
                 </a>
                 </MenuItem>
+                </Tooltip>
 
             </Menu>
             </SidebarContent>

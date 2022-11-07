@@ -188,7 +188,7 @@ thead{
 }
 
 .navconnectbtn:hover{
-  background: rgb(77, 77, 255) !important;
+  background: rgb(76, 76, 221)nt;
   border-color: white !important;
 }
 
@@ -216,6 +216,9 @@ thead{
   border-radius: 20px !important;
   margin-top: 20px;
   margin-left:20px ;
+  height: 95vh !important;
+  overflow: hidden;
+  z-index: 50000;
 }
 
 .sidebarcontent{

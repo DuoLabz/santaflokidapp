@@ -37,7 +37,7 @@ const Home = () => {
                     <Logo size={50}/>
                     {/* </IconContext.Provider> */}
                      <div  className='vline' style={{marginLeft:'10px'}}  />
-                     Welcome to SantaFloki Dapp
+                     Welcome to the SantaFloki Ecosystem
                 </h1>
             <img className='homelogo' src={mainlogo}/>
             
