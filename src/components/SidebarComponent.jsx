@@ -44,13 +44,14 @@ const SidebarComponent = () => {
             element = document.getElementById('calbtn')
             if(!element.classList.contains('menuitemfocus')){
             element.classList.toggle('menuitemfocus')
-             }
         }
-        else if(url.includes('statistics')){
-            element = document.getElementById('statsbtn')
-            if(!element.classList.contains('menuitemfocus')){
-                element.classList.toggle('menuitemfocus')
-             }
+    }
+    else if(url.includes('statistics')){
+        element = document.getElementById('statsbtn')
+        if(!element.classList.contains('menuitemfocus')){
+            element.classList.toggle('menuitemfocus')
+        }
+
         }
         else if(url.includes('articles')){
             element = document.getElementById('newsbtn')
@@ -78,6 +79,12 @@ const SidebarComponent = () => {
         }
         else if(url.includes('minting')){
             element = document.getElementById('minting')
+            if(!element.classList.contains('menuitemfocus')){
+                element.classList.toggle('menuitemfocus')
+             }
+        }
+        else if(url.includes('game')){
+            element = document.getElementById('game')
             if(!element.classList.contains('menuitemfocus')){
                 element.classList.toggle('menuitemfocus')
              }
@@ -267,14 +274,16 @@ const SidebarComponent = () => {
                 </Tooltip>
 
                 <Tooltip title="SantaFlokiRush Game" placement='right' arrow>
-                <MenuItem id='nftbtn' className="menuitem" icon={
+
+                <MenuItem id='game' className="menuitem" icon={
                     <IconContext.Provider value={{size:"20px"}}>
                         <IoGameControllerOutline/>
                     </IconContext.Provider>
                 }>
-                        <a className="menuitem" href="https://santafloki.com/play/" target="_blank">
-                    Game
-                </a>
+                    P2E Game
+                    <NavLink onClick={()=>{
+                        setReload(!reload)
+                    }} to='/game'></NavLink>
                 </MenuItem>
                 </Tooltip>
 

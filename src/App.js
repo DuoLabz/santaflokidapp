@@ -12,6 +12,7 @@ import NFT from './components/NFT';
 import Documents from './components/Documents';
 import Staking from './components/Staking';
 import Minting from './components/Minting';
+import Game from './components/Game';
 export const Context = createContext(null)
 
 function App() {
@@ -24,23 +25,20 @@ function App() {
       <HashRouter>
         <Context.Provider value={[toggle,setToggle,connected,setConnected,address,setAddress]}>
       <SidebarComponent/>
+
         <Routes>
-        <Route
-        exact
-        path='/'
-        element={<Home/>}
-        />
-        <Route
-        exact
-        path='/statistics'
-        element={<Statistics/>}
-        />
-        <Route exact path='/articles' element={<Articles></Articles>}/>
+
+        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/statistics'element={<Statistics/>}/>
+        <Route exact path='/articles' element={<Articles/>}/>
         <Route exact path='/nft' element={<NFT></NFT>}/>
         <Route exact path='/minting' element={<Minting/>}/>
-        <Route exact path='staking' element={<Staking></Staking>}/>
-        <Route exact path='/documents' element={<Documents></Documents>}/>
+        <Route exact path='staking' element={<Staking/>}/>
+        <Route exact path='/documents' element={<Documents/>}/>
+        <Route exact path='/game' element={<Game/>}/>
+
         </Routes>
+
         </Context.Provider>
       </HashRouter>
     </div>

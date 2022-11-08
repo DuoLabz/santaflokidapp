@@ -10,6 +10,8 @@ import statsIce2 from "../assets/images/snow/ice 2.png";
 import statsIce3 from "../assets/images/snow/ice 3.png";
 import playstore from "../assets/images/Playstore.png";
 import appstore from "../assets/images/Appstore.png";
+import Button from 'react-bootstrap/Button';
+import {MdGames} from 'react-icons/md';
 
 const Btn = () => {
 
@@ -27,18 +29,27 @@ const Btn = () => {
     return(
         <Container style={{marginTop:'5px' , textAlign:"center" , justifyItems:"center", justifyContent:"center" , display:"flex"}}>
             <Row>
+
                 <Col xl>
-                <a href={"https://play.google.com/store/apps/details?id=com.santa.floki.rush&hl=en&gl=US"} target="_blank">
-                    <img className="homebtn" style={{height:"80px",width:"255px"}} src={playstore}/>
+                <a className="homebtn" href={"https://play.google.com/store/apps/details?id=com.santa.floki.rush&hl=en&gl=US"} target="_blank">
+                    <img style={{height:"80px",width:"255px"}} src={playstore}/>
                     </a>
                 </Col>
+
                 <Col xl>
-                    <a href={"https://apps.apple.com/us/app/santa-floki-rush/id1614053788"} target="_blank">
-                    <img className="homebtn" style={{height:"80px",width:"255px"}} src={appstore}/>
+                <a href={"https://santafloki.com/play/"} target="_blank">
+                    <h2 className="gamebtn homebtn"><MdGames style={{marginTop:"-5px"}}/>  Play Online</h2>
                     </a>
                 </Col>
-                </Row>
-            </Container>
+
+                <Col xl>
+                    <a className="homebtn" href={"https://apps.apple.com/us/app/santa-floki-rush/id1614053788"} target="_blank">
+                    <img style={{height:"80px",width:"255px"}} src={appstore}/>
+                    </a>
+                </Col>
+
+            </Row>
+        </Container>
     );
 }
 export default Btn;

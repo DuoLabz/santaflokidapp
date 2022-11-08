@@ -22,6 +22,11 @@ const Stats = () => {
     const [spookyPrice,setSpookyPrice]=useState("...");
     const [marvinPrice,setMarvinPrice]=useState("...");
 
+    const [santaMarketcap,setSantaMarketcap]=useState("...");
+    const [spookyMarketcap,setSpookyMarketcap]=useState("...");
+    const [marvinMarketcap,setMarvinMarketcap]=useState("...");
+    
+
     const [option, setOption] = useState({
         dataLabels:{enabled:false},
         grid:{show:false},
@@ -32,22 +37,32 @@ const Stats = () => {
         fill:{colors:['#fe0000']},
         stroke:{colors:['#fe0000']}
      })
-
          
     const axio = async () =>{
 
         var api = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=spookyhalloweenfloki&vs_currencies=usd")).data.spookyhalloweenfloki["usd"];
         setSpookyPrice(api);
-
+        
         var api1 = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=santa-floki-v2&vs_currencies=usd")).data["santa-floki-v2"].usd;
         setSantaPrice( api1);
 
+        
         var api2 = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=flokimarvin&vs_currencies=usd")).data.flokimarvin.usd;
         setMarvinPrice(api2);
-    }
 
-    return(
-        <Container style={{marginTop:'5px'}}>
+        var api3 = await (await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=spookyhalloweenfloki&order=fully_diluted_valuation&per_page=1&page=1&sparkline=false")).data[0].fully_diluted_valuation;
+        setSpookyMarketcap(api3.toLocaleString());
+        
+        var api4 = await (await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=santa-floki-v2&order=fully_diluted_valuation&per_page=1&page=1&sparkline=false")).data[0].fully_diluted_valuation;
+        setSantaMarketcap(api4.toLocaleString());
+
+        var api5 = await (await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=flokimarvin&order=fully_diluted_valuation&per_page=1&page=1&sparkline=false")).data[0].fully_diluted_valuation;
+        setMarvinMarketcap(api5.toLocaleString());
+        
+        }
+                
+                return(
+                    <Container style={{marginTop:'5px'}}>
             <Row>
                 <Col xl>
                     <Card className="statscard1">
@@ -73,10 +88,10 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             $11.19K
+                             ${spookyMarketcap}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
-                            Dividend Holders
+                            Holders
                         </Card.Title>
                         <Card.Text className="bold">
                             <IconContext.Provider value={{size:"25px"}}>
@@ -108,16 +123,16 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                           
                              </IconContext.Provider>
-                             $57.19K
+                             ${santaMarketcap}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
-                            Dividend Holders
+                            Holders
                         </Card.Title>
                         <Card.Text className="bold">
                             <IconContext.Provider value={{size:"25px"}}>
                             <FaHandHoldingUsd style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             2900
+                             NA
                         </Card.Text>
                     </Card>
                 </Col>
@@ -143,16 +158,16 @@ const Stats = () => {
                             <IconContext.Provider value={{size:"25px"}}>
                             <AiFillDollarCircle style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             NA
+                             ${marvinMarketcap}
                         </Card.Text>
                         <Card.Title style={{fontSize:"20px"}}>
-                            Dividend Holders
+                            Holders
                         </Card.Title>
                         <Card.Text className="bold">
                             <IconContext.Provider value={{size:"25px"}}>
                             <FaHandHoldingUsd style={{marginRight:"10px"}}/>                            
                             </IconContext.Provider>
-                             920
+                            NA  
                         </Card.Text>
                     </Card>
                 </Col>
