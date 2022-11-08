@@ -44,6 +44,16 @@ const Stats = () => {
 
         var api2 = await (await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=flokimarvin&vs_currencies=usd")).data.flokimarvin.usd;
         setMarvinPrice(api2);
+        
+        const config = {
+                    headers:{
+                      "X-CMC_PRO_API_KEY": 'b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c',
+                    }
+                  };
+                  const url = "https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest";
+                axios.get(url, config)
+                .then(res=> console.log(res.data))
+                .catch(err=> console.log(err))
     }
 
     return(
