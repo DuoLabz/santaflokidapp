@@ -514,6 +514,17 @@ input::-webkit-inner-spin-button {
   display: inline-flex;
 }
 
+.backBtn{
+  height: 40px !important;
+  width: 40px !important;
+  margin-left: 10px;
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 0.5px;
+  cursor:pointer;
+}
+
+
 @media (max-width: 1300px){
   .pagebanner{
     font-size:x-large;
@@ -570,6 +581,7 @@ input::-webkit-inner-spin-button {
     padding-top: 10px;
   }
   .pro-sidebar{
+    height: 80vh !important;
     margin-top: 20px;
     margin-left: -20px ;
   }

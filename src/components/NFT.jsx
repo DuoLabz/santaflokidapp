@@ -1,16 +1,26 @@
 import { Alert, Container, Row} from 'react-bootstrap'
 import NavbarComponent from './NavbarComponent';
-import {CgDanger} from 'react-icons/cg'
-import {FaReact} from 'react-icons/fa'
-import { IconContext } from 'react-icons/lib';
-import Chart from 'apexcharts'
 import Logo from './Logo';
 import bgimg from "../assets/images/bgimg.png";
+import Nftbtn from './Nftbtn';
+import { createContext, useState } from 'react';
+import SpookyNftCards from './SpookyNftCards';
+import SantaNftCards from './SantaNftCards';
+import {IoChevronBackCircleSharp} from 'react-icons/io5';
+
+const Appstate = createContext();
 
 const NFT = () =>{
+
+    const[santaNft,setSantaNft]=useState(false);
+    const[spookyNft,setSpookyNft]=useState(false);
+    console.log(santaNft);
+    console.log(spookyNft);
+
     return(
+        <Appstate.Provider value={[santaNft,setSantaNft,spookyNft,setSpookyNft]}>
         <div className="homediv">
-                        <img className="bgimg" src={bgimg}/>
+        <img className="bgimg" src={bgimg}/>
             <NavbarComponent/>
             <Container className='homecontainer text'>
 
@@ -20,19 +30,37 @@ const NFT = () =>{
                      <div className='vline'/>NFT
                 </h1>
 
-                <Alert variant='danger' style={{fontSize:'15px',height:"fit-content"}}>
-                
-                        <div>
-                            <CgDanger style={{display:'inline-block ',marginRight:'10px',fontSize:'25px', paddingBottom:'2px',color:'white'}}/>
-                            <div style={{display:'inline-block',color:'white'}}>Coming soon</div>
-                            <div style={{marginLeft:'35px'}}>NFT integrations will be coming soon. Track your NFTs and explore all of the beautiful designs inside the website! </div>
-                    </div>
-                </Alert>
+                {( santaNft == false && spookyNft == false )?
+                <></>
+                :
+                <IoChevronBackCircleSharp className='backBtn' onClick={()=>{setSantaNft(false);setSpookyNft(false)}}></IoChevronBackCircleSharp>
+                }
+
+
+                {( santaNft == false && spookyNft == false )?
+                <Nftbtn/>
+                :
+                <>
+                {(spookyNft)?
+                    <SpookyNftCards/>
+                    :
+                    <>
+                {(santaNft)?
+                    <SantaNftCards/>
+                    :
+                    <></>
+                }
+                </>
+                    }
+                </>
+                }
 
             </Container>
             
         </div>
+            </Appstate.Provider>
     );
 }
 
 export default NFT;
+export {Appstate};
