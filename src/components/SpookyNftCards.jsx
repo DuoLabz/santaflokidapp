@@ -1,6 +1,5 @@
-import { Container,Row,Col,Card,CardGroup, Button } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import { useState } from "react";
-import spookygif from '../assets/images/spookygif.gif';
 
 
 const SpookyNftCards = () => {
@@ -16,92 +15,16 @@ const SpookyNftCards = () => {
         stroke:{colors:['#fe0000']}
      })
 
+     const NFTsArray=[...Array(48).keys()]
+
     return(
 
         <Container style={{marginTop:'5px',textAlign:"center",overflow:"scroll",height:"70vh"}}>
-            <Row>
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-                <Col xl>
-                        <img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={spookygif}/>
-                </Col>
-
-            </Row>
-            
+                {NFTsArray.map(
+                        (nft)=>{
+                                return(<img style={{width:"200px" , borderRadius:"10%",margin:"10px"}} src={'https://santafloki.mypinata.cloud/ipfs/QmNmnNBnxZvHiYQuUNyW4a54RiSpWocCxhjqa51LstmHwa/'+nft+'.png'}/>)
+                        }
+                )}
         </Container>
     );
 }
